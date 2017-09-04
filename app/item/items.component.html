@@ -1,0 +1,9 @@
+
+<GridLayout rows="2*, *" (pan)="onPan($event)" (pinch)="onPinch($event)" (doubleTap)="onDoubleTap($event)" class="page">
+    <StackLayout #item row="0" width="200" height="200" backgroundColor="Green">    <!-- notice the item id - this is the root element to scale-->
+        <Label text="Pinch, pan or double tap" textWrap="true" lass="p-20"></Label> <!-- all children ot the element #item will scale accordingly-->
+        <Image src="res://icon" width="50" height="50" class="p-20"></Image>        <!-- all children ot the element #item will scale accordingly-->
+    </StackLayout>
+    <TextView #status row="1" editable="false"></TextView>
+</GridLayout>
+
