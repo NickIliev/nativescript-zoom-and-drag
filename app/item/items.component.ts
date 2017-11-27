@@ -45,6 +45,8 @@ export class ItemsComponent {
     onPan(args: PanGestureEventData) {
         console.log("PAN[" + this.states[args.state] + "] deltaX: " + Math.round(args.deltaX) + " deltaY: " + Math.round(args.deltaY));
 
+        console.log("PAN state: " + this.states[args.state] + " ; PAN args.state: " + args.state);
+
         if (args.state === 1) {
             this.prevDeltaX = 0;
             this.prevDeltaY = 0;
