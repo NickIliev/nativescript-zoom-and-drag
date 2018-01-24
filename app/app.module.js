@@ -9,7 +9,7 @@ var items_component_1 = require("./item/items.component");
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
 // import { NativeScriptHttpModule } from "nativescript-angular/http";
-var AppModule = (function () {
+var AppModule = /** @class */ (function () {
     /*
     Pass your application module to the bootstrapModule function located in main.ts to start your app
     */

@@ -7,7 +7,7 @@ var routes = [
     { path: "", redirectTo: "/items", pathMatch: "full" },
     { path: "items", component: items_component_1.ItemsComponent }
 ];
-var AppRoutingModule = (function () {
+var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
     }
     AppRoutingModule = __decorate([

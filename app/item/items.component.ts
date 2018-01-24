@@ -1,12 +1,11 @@
 import { Component, ViewChild, ElementRef } from "@angular/core";
-import { EventData } from 'data/observable';
-import { Page } from 'ui/page';
-import { Label } from "ui/label";
-import { View } from "ui/core/view";
+import { EventData } from 'tns-core-modules/data/observable';
+import { Page } from 'tns-core-modules/ui/page';
+import { Label } from "tns-core-modules/ui/label";
+import { View } from "tns-core-modules/ui/core/view";
 
-import * as utils from "utils/utils";
-import { GestureEventData, PinchGestureEventData, PanGestureEventData } from "ui/gestures";
-
+import * as utils from "tns-core-modules/utils/utils";
+import { GestureEventData, PinchGestureEventData, PanGestureEventData } from "tns-core-modules/ui/gestures";
 
 @Component({
     selector: "ns-items",
@@ -30,6 +29,7 @@ export class ItemsComponent {
 
     ngOnInit() {
         this.item = this.angularItem.nativeElement;
+        console.log("this.item: " + this.item);
         this.statusLbl = this.status.nativeElement;
 
         this.density = utils.layout.getDisplayDensity();
@@ -43,9 +43,8 @@ export class ItemsComponent {
     }
 
     onPan(args: PanGestureEventData) {
-        console.log("PAN[" + this.states[args.state] + "] deltaX: " + Math.round(args.deltaX) + " deltaY: " + Math.round(args.deltaY));
-
-        console.log("PAN state: " + this.states[args.state] + " ; PAN args.state: " + args.state);
+        // console.log("PAN[" + this.states[args.state] + "] deltaX: " + Math.round(args.deltaX) + " deltaY: " + Math.round(args.deltaY));
+        // console.log("PAN state: " + this.states[args.state] + " ; PAN args.state: " + args.state);
 
         if (args.state === 1) {
             this.prevDeltaX = 0;
@@ -62,7 +61,7 @@ export class ItemsComponent {
     }
 
     onPinch(args: PinchGestureEventData) {
-        console.log("PINCH[" + this.states[args.state] + "] scale: " + args.scale + " focusX: " + args.getFocusX() + " focusY: " + args.getFocusY());
+        // console.log("PINCH[" + this.states[args.state] + "] scale: " + args.scale + " focusX: " + args.getFocusX() + " focusY: " + args.getFocusY());
 
         if (args.state === 1) {
             const newOriginX = args.getFocusX() - this.item.translateX;
@@ -89,7 +88,7 @@ export class ItemsComponent {
     }
 
     onDoubleTap(args: GestureEventData) {
-        console.log("DOUBLETAP");
+        // console.log("DOUBLETAP");
 
         this.item.animate({
             translate: { x: 0, y: 0 },
